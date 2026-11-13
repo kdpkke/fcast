@@ -31,7 +31,7 @@ import { PlaybackCoordinator, PlaybackHost, PlaybackOptions } from 'common/Playb
 const { version } = __non_webpack_require__('./package.json');
 
 const logger = new Logger('Main', LoggerType.BACKEND);
-const serviceId = 'io.github.kdpkke.fcastreceiver.service';
+const serviceId = 'io.github.kdpkke.castorreceiver.service';
 const service = new Service(serviceId);
 
 let v4Context: V4Context | null = null;
@@ -83,7 +83,7 @@ export class Main {
 
         Main.emitter.emit('play', messageInfo);
         if (!Main.windowVisible) {
-            const appId = 'io.github.kdpkke.fcastreceiver';
+            const appId = 'io.github.kdpkke.castorreceiver';
             service.call("luna://com.webos.applicationManager/launch", {
                 'id': appId,
                 'params': { timestamp: Date.now(), messageInfo: messageInfo }
@@ -99,7 +99,7 @@ export class Main {
 
 	static {
 		try {
-            Main.cache.appName = "Receiver for FCast-V4"
+            Main.cache.appName = "Castor Receiver for FCast-V4"
             Main.cache.appVersion = version
 
             logger.info(`${Main.cache.appName}: ${Main.cache.appVersion}, OS: ${process.platform} ${process.arch}`);
@@ -359,7 +359,7 @@ function initializeV4() {
             candidates.push({ path: process.env.FCAST_IDENTITY_DIR, persistent: true });
         }
         candidates.push({ path: path.join(serviceDir, 'identity'), persistent: true });
-        candidates.push({ path: path.join(os.tmpdir(), 'io.github.kdpkke.fcastreceiver'), persistent: false });
+        candidates.push({ path: path.join(os.tmpdir(), 'io.github.kdpkke.castorreceiver'), persistent: false });
 
         const identity = loadOrCreateIdentity(candidates);
         const intro = encodeReceiverIntroduction({
@@ -380,7 +380,7 @@ function initializeV4() {
 
 export function getComputerName() {
     // The name senders show for this TV.
-    return os.hostname() || 'Receiver for FCast-V4';
+    return os.hostname() || 'Castor Receiver for FCast-V4';
 }
 
 export function getAppName() {

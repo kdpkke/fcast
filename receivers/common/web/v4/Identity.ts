@@ -5,7 +5,7 @@ import * as forge from 'node-forge';
 
 const KEY_FILE_NAME = 'receiver-key.pem';
 const CERT_FILE_NAME = 'receiver-cert.pem';
-const COMMON_NAME = 'Receiver for FCast-V4';
+const COMMON_NAME = 'Castor Receiver for FCast-V4';
 const KEY_FILE_MODE = 0o600;
 const CERT_FILE_MODE = 0o644;
 const ONE_DAY_MS = 24 * 60 * 60 * 1000;

@@ -12,7 +12,7 @@ const path = require('path');
 const url = require('url');
 const child_process = require('child_process');
 
-const SERVICE_URI = 'luna://io.github.kdpkke.fcastreceiver.service/';
+const SERVICE_URI = 'luna://io.github.kdpkke.castorreceiver.service/';
 
 const CONTENT_TYPES = {
   '.html': 'text/html; charset=utf-8',
@@ -76,7 +76,7 @@ function pageStub() {
 
   window.PalmServiceBridge = PalmServiceBridge;
   window.PalmSystem = {
-    identifier: 'io.github.kdpkke.fcastreceiver',
+    identifier: 'io.github.kdpkke.castorreceiver',
     launchParams: '{}',
     deviceInfo: JSON.stringify({
       modelName: 'TEST',

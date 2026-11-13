@@ -405,7 +405,7 @@ function main() {
       return false;
     }
     const dir = path.posix.dirname(p);
-    return path.posix.basename(dir) === 'main' || p.indexOf('io.github.kdpkke.fcastreceiver.service') !== -1;
+    return path.posix.basename(dir) === 'main' || p.indexOf('io.github.kdpkke.castorreceiver.service') !== -1;
   });
   let serviceMain = null;
   let servicePkg = null;

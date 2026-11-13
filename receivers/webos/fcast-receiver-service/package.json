@@ -1,7 +1,7 @@
 {
-    "name": "io.github.kdpkke.fcastreceiver.service",
+    "name": "io.github.kdpkke.castorreceiver.service",
     "version": "3.0.0",
-    "description": "Network service of Receiver for FCast-V4",
+    "description": "Network service of Castor Receiver for FCast-V4",
     "author": "MuratoreWare",
     "license": "MIT",
     "main": "main.js",

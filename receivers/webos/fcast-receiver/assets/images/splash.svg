@@ -1,21 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg width="1920" height="1080" version="1.1" viewBox="0 0 1920 1080" xmlns="http://www.w3.org/2000/svg">
-  <defs>
-    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#14b8a6"/>
-      <stop offset="1" stop-color="#0e5f73"/>
-    </linearGradient>
-  </defs>
+<!-- Source of splash.png. The icon is the Castor mascot: see common/assets/icons/app/icon.svg for its origin and licence. -->
+<svg width="1920" height="1080" version="1.1" viewBox="0 0 1920 1080" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
   <rect width="1920" height="1080" fill="#0b1f26"/>
-  <g transform="translate(832 300)">
-    <rect x="8" y="8" width="240" height="240" rx="56" fill="url(#bg)"/>
-    <rect x="46" y="78" width="164" height="108" rx="14" fill="none" stroke="#ffffff" stroke-width="14"/>
-    <path d="M100 210h56" stroke="#ffffff" stroke-width="14" stroke-linecap="round"/>
-    <path d="M128 186v24" stroke="#ffffff" stroke-width="14"/>
-    <path d="M116 108v48l40-24z" fill="#ffffff"/>
-    <path d="M172 52a28 28 0 0 1 28 28" fill="none" stroke="#ffffff" stroke-width="10" stroke-linecap="round"/>
-    <path d="M172 30a50 50 0 0 1 50 50" fill="none" stroke="#ffffff" stroke-width="10" stroke-linecap="round" opacity="0.7"/>
-  </g>
-  <text x="960" y="680" fill="#ffffff" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="72" font-weight="700" text-anchor="middle">Receiver for FCast-V4</text>
+  <image x="832" y="300" width="256" height="256" xlink:href="../../../../common/assets/icons/app/icon.svg"/>
+  <text x="960" y="680" fill="#ffffff" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="72" font-weight="700" text-anchor="middle">Castor Receiver for FCast-V4</text>
   <text x="960" y="750" fill="#9fb8bf" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="30" text-anchor="middle">Independent implementation, not affiliated with FUTO</text>
 </svg>

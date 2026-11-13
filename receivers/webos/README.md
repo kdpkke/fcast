@@ -10,9 +10,9 @@ This receiver was deprecated on 2026-04-28 (`92d4d3d0`) and removed from the rep
 
 Version 3.0.0 is that receiver restored, together with the `receivers/common` code it shares, and extended to protocol version 4.
 
-To keep it apart from FUTO's application, as the FCast trademark policy asks, the app has its own name, **Receiver for FCast-V4**, its own id, `io.github.kdpkke.fcastreceiver` (service `io.github.kdpkke.fcastreceiver.service`), and its own icon. Senders list the TV under its host name. Inside the app the FCast name only appears where it describes compatibility, as in "Scan with a FCast sender app".
+To keep it apart from FUTO's application, as the FCast trademark policy asks, the app has its own name, **Castor Receiver for FCast-V4**, its own id, `io.github.kdpkke.castorreceiver` (service `io.github.kdpkke.castorreceiver.service`), and its own icon. The icon is the mascot of [Castor](https://github.com/stupside/castor), by stupside, used under the MIT License: a Go gopher in a beaver costume, after the Go gopher designed by Renee French (CC BY 4.0). The notice is in `common/assets/icons/app/CASTOR-MASCOT-LICENSE.txt` and ships inside the package. Senders list the TV under its host name. Inside the app the FCast name only appears where it describes compatibility, as in "Scan with a FCast sender app".
 
-It has been tested mostly with automated tests on a desktop machine. On a TV it has had one manual test: installed on an LG C2 and used to play two videos cast from Grayjay. See [Tests on a TV](#tests-on-a-tv).
+It has been tested mostly with automated tests on a desktop machine. On a TV it has had one manual test, made before the app got its own name and id: installed on an LG C2 and used to play two videos cast from Grayjay. The renamed build has not been on a TV yet. See [Tests on a TV](#tests-on-a-tv).
 
 ## Protocol versions
 
@@ -91,10 +91,10 @@ From `receivers/webos` (built here with Node.js 26 on the build machine):
 (cd fcast-receiver && npm install && npm run build)
 (cd fcast-receiver-service && npm install && npm run build)
 npx --package @webos-tools/cli ares-package fcast-receiver/dist/ fcast-receiver-service/dist/ --no-minify
-node scripts/check-ipk.js io.github.kdpkke.fcastreceiver_3.0.0_all.ipk
+node scripts/check-ipk.js io.github.kdpkke.castorreceiver_3.0.0_all.ipk
 ```
 
-`ares-package` works offline and writes `io.github.kdpkke.fcastreceiver_3.0.0_all.ipk` to the current folder. `check-ipk.js` verifies that the package contains the fonts with their licence files, the icons and the background video, and that it contains no private key.
+`ares-package` works offline and writes `io.github.kdpkke.castorreceiver_3.0.0_all.ipk` to the current folder. `check-ipk.js` verifies that the package contains the fonts with their licence files, the icons and the background video, and that it contains no private key.
 
 `scripts/build.sh` does the same with a globally installed `ares-package`.
 
@@ -108,11 +108,11 @@ The TV must be in Developer Mode, with the Key Server on while the device is bei
 
 ```bash
 npx --package @webos-tools/cli ares-setup-device   # once: name, IP address, port 9922, user prisoner
-npx --package @webos-tools/cli ares-install --device <name> io.github.kdpkke.fcastreceiver_3.0.0_all.ipk
-npx --package @webos-tools/cli ares-launch --device <name> io.github.kdpkke.fcastreceiver
+npx --package @webos-tools/cli ares-install --device <name> io.github.kdpkke.castorreceiver_3.0.0_all.ipk
+npx --package @webos-tools/cli ares-launch --device <name> io.github.kdpkke.castorreceiver
 ```
 
-Uninstall any other FCast receiver on the TV first, the one from the LG store or a Developer Mode build of 2.0.1 or of the first 3.0.0 builds (app id `com.futo.fcast.receiver`). Both listen on TCP port 46899, so only one of them can work at a time.
+Uninstall any other FCast receiver on the TV first, the one from the LG store or a Developer Mode build of 2.0.1 or of the first 3.0.0 builds (app id `com.futo.fcast.receiver` or `io.github.kdpkke.fcastreceiver`). Both listen on TCP port 46899, so only one of them can work at a time.
 
 ### Development container
 
@@ -160,7 +160,7 @@ The service and frontend test loads the compiled frontend, unchanged, in headles
 
 ### Results
 
-Run on 2026-11-10 and 11 on Windows 11, against the service and the frontend extracted from `io.github.kdpkke.fcastreceiver_3.0.0_all.ipk`, on the Node.js versions of the TVs (8.12.0 for webOS 5 and 6, 12.21.0 for webOS 22, 12.22.2 for webOS 23, 20.12.2 for webOS 26), using the official portable Node.js builds. Browser: headless Chrome.
+Run on 2026-11-10, 11 and 13 on Windows 11, against the service and the frontend extracted from `io.github.kdpkke.castorreceiver_3.0.0_all.ipk`, on the Node.js versions of the TVs (8.12.0 for webOS 5 and 6, 12.21.0 for webOS 22, 12.22.2 for webOS 23, 20.12.2 for webOS 26), using the official portable Node.js builds. Browser: headless Chrome.
 
 | Test | 8.12.0 | 12.21.0 | 12.22.2 | 20.12.2 |
 |------|--------|---------|---------|---------|
@@ -197,13 +197,13 @@ What those cases cover apart from embedded tracks (track change checks, automati
 
 ## Tests on a TV
 
-Done once, on an LG C2 in Developer Mode with version 3.0.0:
+Done once, on an LG C2 in Developer Mode, with version 3.0.0 as it was before the rename (app id `com.futo.fcast.receiver`, same code otherwise):
 
 - the package installs and the app opens on its main screen, with the QR code and the IP address;
 - Grayjay for Android, which speaks protocol version 4, finds the receiver and connects to it;
 - two videos cast from Grayjay played correctly: a YouTube video with subtitles and a 4K HDR video with subtitles.
 
-Nothing else has been checked on a TV. The automated tests run the service on desktop Node.js and the frontend in a desktop browser; they say nothing about the TV's video decoder, its browser, the remote control or the app lifecycle.
+The build with its own name, id and icon has not been installed on a TV. Nothing else has been checked on a TV. The automated tests run the service on desktop Node.js and the frontend in a desktop browser; they say nothing about the TV's video decoder, its browser, the remote control or the app lifecycle.
 
 Checklist for the rest, on a webOS 22 or later TV:
 

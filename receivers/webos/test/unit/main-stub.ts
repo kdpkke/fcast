@@ -4,7 +4,7 @@ export function getComputerName(): string {
 }
 
 export function getAppName(): string {
-    return 'Receiver for FCast-V4';
+    return 'Castor Receiver for FCast-V4';
 }
 
 export function getAppVersion(): string {

@@ -1,9 +1,9 @@
 {
-  "id": "io.github.kdpkke.fcastreceiver.service",
-  "description": "Network service of Receiver for FCast-V4",
+  "id": "io.github.kdpkke.castorreceiver.service",
+  "description": "Network service of Castor Receiver for FCast-V4",
   "services": [
     {
-      "name": "io.github.kdpkke.fcastreceiver.service"
+      "name": "io.github.kdpkke.castorreceiver.service"
     }
   ]
 }
