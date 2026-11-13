@@ -1,6 +1,8 @@
-# FCast WebOS Receiver
+# WebOS Receiver for FCast V4
 
-The FCast WebOS Receiver is split into two projects: `fcast-receiver` for the frontend UI and `fcast-receiver-service` for the background network service.
+> This application is an independent community implementation of the FCast protocol. It is not affiliated with FUTO. FCast is a registered trademark of FUTO.
+
+The receiver is split into two projects: `fcast-receiver` for the frontend UI and `fcast-receiver-service` for the background network service.
 
 ## Status
 

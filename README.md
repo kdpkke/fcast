@@ -1,3 +1,15 @@
+# WebOS Receiver for FCast V4
+
+A receiver for LG webOS TVs that implements FCast protocol version 4, with version 2 and 3 senders still supported.
+
+> This application is an independent community implementation of the FCast protocol. It is not affiliated with FUTO. FCast is a registered trademark of FUTO.
+
+This repository is a fork of [futo-org/fcast](https://github.com/futo-org/fcast). Upstream removed its webOS receiver in `8d4fc4f6`; here it is restored and extended to protocol version 4. Everything specific to this project is in [`receivers/webos`](receivers/webos) and [`receivers/common`](receivers/common). Start with [`receivers/webos/README.md`](receivers/webos/README.md): what is supported, how to build and install, and what has been tested.
+
+The rest of the repository is upstream FCast, unchanged. Its original README follows.
+
+---
+
 <div align="center">
 <p>
 <a href="https://fcast.org/">
