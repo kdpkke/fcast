@@ -1,10 +1,10 @@
 // Replaces src/Main in the unit bundle: the real module starts the webOS service when imported.
 export function getComputerName(): string {
-    return 'FCast-unit-test';
+    return 'unit-test-host';
 }
 
 export function getAppName(): string {
-    return 'FCast Receiver webOS';
+    return 'Receiver for FCast-V4';
 }
 
 export function getAppVersion(): string {

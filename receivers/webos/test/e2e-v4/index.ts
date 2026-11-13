@@ -131,7 +131,7 @@ async function expectIntroduction(session: ClientSession): Promise<string> {
     const intro = receiverIntroductionOf(frame.body);
     check(intro.capabilities().media().mirroring() === false, 'capabilities.media.mirroring is not false');
     const displayName = String(intro.deviceInfo().displayName());
-    check(displayName.indexOf('FCast-') === 0, 'deviceInfo.displayName is "' + displayName + '"');
+    check(displayName === os.hostname(), 'deviceInfo.displayName is "' + displayName + '", expected the host name');
     return 'displayName=' + displayName;
 }
 
@@ -511,7 +511,7 @@ async function main(opts: Options) {
     // 12. Real sender found through mDNS, fingerprint read from the TXT record.
     if (opts.sender) {
         await step('real-sender-mdns', async () => {
-            const name = 'FCast-' + os.hostname();
+            const name = os.hostname();
             const before = countLogs('v4 sender introduced');
             const proc = harness.runProcess(opts.sender, ['--name', name, '--discovery-timeout', '10', 'pause'], 30000);
             const seen = await waitUntil(() => countLogs('v4 sender introduced') > before, 25000);

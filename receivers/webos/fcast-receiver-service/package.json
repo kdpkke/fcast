@@ -1,8 +1,8 @@
 {
-    "name": "com.futo.fcast.receiver.service",
+    "name": "io.github.kdpkke.fcastreceiver.service",
     "version": "3.0.0",
-    "description": "FCast network service",
-    "author": "FUTO",
+    "description": "Network service of Receiver for FCast-V4",
+    "author": "MuratoreWare",
     "license": "MIT",
     "main": "main.js",
     "scripts": {

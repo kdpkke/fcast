@@ -58,7 +58,7 @@ try {
     const getDeviceInfoService = window.webOSDev.connection.getStatus({
         onSuccess: (message: any) => {
             logger.info('Network info status message', message);
-            const deviceName = 'FCast-LGwebOSTV';
+            const deviceName = 'LGwebOSTV';
             const connections: any[] = [];
             let fallback = true;
 
@@ -128,7 +128,7 @@ try {
     const launchHandler = () => {
         // Launch handler not supported in simulator due to JSON parsing errors of launch parameters
         const params = window.webOSDev.launchParams();
-        logger.info(`Main: (Re)launching FCast Receiver with args: ${JSON.stringify(params)}`);
+        logger.info(`Main: (Re)launching the app with args: ${JSON.stringify(params)}`);
 
         // WebOS 6.0 and earlier: Timestamp tracking seems to be necessary as launch event is raised regardless if app is in foreground or not
         const lastTimestamp = Number(sessionStorage.getItem('lastTimestamp'));

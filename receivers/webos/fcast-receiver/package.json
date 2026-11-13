@@ -1,8 +1,8 @@
 {
-  "name": "com.futo.fcast.receiver",
+  "name": "io.github.kdpkke.fcastreceiver",
   "version": "3.0.0",
   "description": "An application implementing a FCast receiver.",
-  "author": "FUTO",
+  "author": "MuratoreWare",
   "license": "MIT",
   "scripts": {
     "build": "rm -rf dist/ && webpack --config ./webpack.config.js",

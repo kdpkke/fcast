@@ -10,6 +10,8 @@ This receiver was deprecated on 2026-04-28 (`92d4d3d0`) and removed from the rep
 
 Version 3.0.0 is that receiver restored, together with the `receivers/common` code it shares, and extended to protocol version 4.
 
+To keep it apart from FUTO's application, as the FCast trademark policy asks, the app has its own name, **Receiver for FCast-V4**, its own id, `io.github.kdpkke.fcastreceiver` (service `io.github.kdpkke.fcastreceiver.service`), and its own icon. Senders list the TV under its host name. Inside the app the FCast name only appears where it describes compatibility, as in "Scan with a FCast sender app".
+
 It has been tested mostly with automated tests on a desktop machine. On a TV it has had one manual test: installed on an LG C2 and used to play two videos cast from Grayjay. See [Tests on a TV](#tests-on-a-tv).
 
 ## Protocol versions
@@ -89,10 +91,10 @@ From `receivers/webos` (built here with Node.js 26 on the build machine):
 (cd fcast-receiver && npm install && npm run build)
 (cd fcast-receiver-service && npm install && npm run build)
 npx --package @webos-tools/cli ares-package fcast-receiver/dist/ fcast-receiver-service/dist/ --no-minify
-node scripts/check-ipk.js com.futo.fcast.receiver_3.0.0_all.ipk
+node scripts/check-ipk.js io.github.kdpkke.fcastreceiver_3.0.0_all.ipk
 ```
 
-`ares-package` works offline and writes `com.futo.fcast.receiver_3.0.0_all.ipk` to the current folder. `check-ipk.js` verifies that the package contains the fonts with their licence files, the icons and the background video, and that it contains no private key.
+`ares-package` works offline and writes `io.github.kdpkke.fcastreceiver_3.0.0_all.ipk` to the current folder. `check-ipk.js` verifies that the package contains the fonts with their licence files, the icons and the background video, and that it contains no private key.
 
 `scripts/build.sh` does the same with a globally installed `ares-package`.
 
@@ -106,11 +108,11 @@ The TV must be in Developer Mode, with the Key Server on while the device is bei
 
 ```bash
 npx --package @webos-tools/cli ares-setup-device   # once: name, IP address, port 9922, user prisoner
-npx --package @webos-tools/cli ares-install --device <name> com.futo.fcast.receiver_3.0.0_all.ipk
-npx --package @webos-tools/cli ares-launch --device <name> com.futo.fcast.receiver
+npx --package @webos-tools/cli ares-install --device <name> io.github.kdpkke.fcastreceiver_3.0.0_all.ipk
+npx --package @webos-tools/cli ares-launch --device <name> io.github.kdpkke.fcastreceiver
 ```
 
-The version from the LG store must be uninstalled first.
+Uninstall any other FCast receiver on the TV first, the one from the LG store or a Developer Mode build of 2.0.1 or of the first 3.0.0 builds (app id `com.futo.fcast.receiver`). Both listen on TCP port 46899, so only one of them can work at a time.
 
 ### Development container
 
@@ -158,7 +160,7 @@ The service and frontend test loads the compiled frontend, unchanged, in headles
 
 ### Results
 
-Run on 2026-11-10 and 11 on Windows 11, against the service and the frontend extracted from `com.futo.fcast.receiver_3.0.0_all.ipk`, on the Node.js versions of the TVs (8.12.0 for webOS 5 and 6, 12.21.0 for webOS 22, 12.22.2 for webOS 23, 20.12.2 for webOS 26), using the official portable Node.js builds. Browser: headless Chrome.
+Run on 2026-11-10 and 11 on Windows 11, against the service and the frontend extracted from `io.github.kdpkke.fcastreceiver_3.0.0_all.ipk`, on the Node.js versions of the TVs (8.12.0 for webOS 5 and 6, 12.21.0 for webOS 22, 12.22.2 for webOS 23, 20.12.2 for webOS 26), using the official portable Node.js builds. Browser: headless Chrome.
 
 | Test | 8.12.0 | 12.21.0 | 12.22.2 | 20.12.2 |
 |------|--------|---------|---------|---------|

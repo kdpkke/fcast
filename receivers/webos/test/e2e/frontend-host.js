@@ -12,7 +12,7 @@ const path = require('path');
 const url = require('url');
 const child_process = require('child_process');
 
-const SERVICE_URI = 'luna://com.futo.fcast.receiver.service/';
+const SERVICE_URI = 'luna://io.github.kdpkke.fcastreceiver.service/';
 
 const CONTENT_TYPES = {
   '.html': 'text/html; charset=utf-8',
@@ -76,7 +76,7 @@ function pageStub() {
 
   window.PalmServiceBridge = PalmServiceBridge;
   window.PalmSystem = {
-    identifier: 'com.futo.fcast.receiver',
+    identifier: 'io.github.kdpkke.fcastreceiver',
     launchParams: '{}',
     deviceInfo: JSON.stringify({
       modelName: 'TEST',

@@ -2,8 +2,8 @@
 
 version=$(jq -r '.version' fcast-receiver/package.json)
 scripts/build.sh
-ares-install --device tv ./com.futo.fcast.receiver_${version}_all.ipk
+ares-install --device tv ./io.github.kdpkke.fcastreceiver_${version}_all.ipk
 
-ares-inspect --device tv -s com.futo.fcast.receiver.service &
+ares-inspect --device tv -s io.github.kdpkke.fcastreceiver.service &
 sleep 6
-ares-inspect --device tv --app com.futo.fcast.receiver
+ares-inspect --device tv --app io.github.kdpkke.fcastreceiver

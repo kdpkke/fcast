@@ -1,14 +1,14 @@
 {
-  "id": "com.futo.fcast.receiver",
+  "id": "io.github.kdpkke.fcastreceiver",
   "version": "3.0.0",
-  "vendor": "FUTO",
+  "vendor": "MuratoreWare",
   "type": "web",
   "main": "index.html",
-  "title": "FCast Receiver",
-  "appDescription": "FCast Receiver",
+  "title": "Receiver for FCast-V4",
+  "appDescription": "A receiver for the FCast protocol. Not affiliated with FUTO.",
   "icon": "assets/icons/icon.png",
   "largeIcon": "assets/icons/largeIcon.png",
-  "iconColor": "#0a62f5",
+  "iconColor": "#0e5f73",
   "splashBackground": "assets/images/splash.png",
   "disableBackHistoryAPI": true
 }

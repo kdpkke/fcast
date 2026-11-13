@@ -1,9 +1,9 @@
 {
-  "id": "com.futo.fcast.receiver.service",
-  "description": "FCast network service",
+  "id": "io.github.kdpkke.fcastreceiver.service",
+  "description": "Network service of Receiver for FCast-V4",
   "services": [
     {
-      "name": "com.futo.fcast.receiver.service"
+      "name": "io.github.kdpkke.fcastreceiver.service"
     }
   ]
 }

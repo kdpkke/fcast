@@ -148,7 +148,7 @@ try {
     const launchHandler = () => {
         // args don't seem to be passed in via event despite what documentation says...
         const params = window.webOSDev.launchParams();
-        logger.info(`Player: (Re)launching FCast Receiver with args: ${JSON.stringify(params)}`);
+        logger.info(`Player: (Re)launching the app with args: ${JSON.stringify(params)}`);
 
         // WebOS 6.0 and earlier: Timestamp tracking seems to be necessary as launch event is raised regardless if app is in foreground or not
         const lastTimestamp = Number(sessionStorage.getItem('lastTimestamp'));

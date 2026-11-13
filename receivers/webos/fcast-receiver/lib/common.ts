@@ -4,7 +4,7 @@ require('lib/webOSTVjs-1.2.10/webOSTV.js');
 require('lib/webOSTVjs-1.2.10/webOSTV-dev.js');
 
 const logger = new Logger('Common', LoggerType.FRONTEND);
-const serviceId = 'com.futo.fcast.receiver.service';
+const serviceId = 'io.github.kdpkke.fcastreceiver.service';
 
 export enum RemoteKeyCode {
     Stop = 413,
